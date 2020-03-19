@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'authing-lambda-auth
+
+  Sample SAM Template for authing-lambda-auth
+
+  '
+Globals:
+  Function:
+    Timeout: 5
+Resources:
+  AuthFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: AuthFunction
+      Handler: app.handler
+      Runtime: nodejs12.x
+Outputs:
+  AuthFunction:
+    Description: Authing Lambda Auth Function ARN
+    Value:
+      Fn::GetAtt:
+      - AuthFunction
+      - Arn
