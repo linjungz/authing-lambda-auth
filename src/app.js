@@ -13,7 +13,7 @@ exports.handler =  function(event, context, callback) {
     console.log(token);
     const jwt = require('jsonwebtoken');
     try {
-        var decoded = jwt.verify(token, '9825f17940e086bfd5c08a91030a8a7b');
+        var decoded = jwt.verify(token, 'YOUR_APP_SECRET_FROM_AUTHING'); //这里需要从Authing.cn控制台获取OIDC应用的App Secret
         //兼容后端Lambda Functin
         //该Lambda Function认为验证是通过Cognito，代码中会通过claims来获取用户名等
         var claims = {
