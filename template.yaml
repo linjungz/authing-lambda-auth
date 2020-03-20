@@ -17,6 +17,9 @@ Resources:
       CodeUri: src/
       Handler: app.handler
       Runtime: nodejs12.x
+      Environment: 
+        Variables: 
+          authingOIDCAppSecret: 4f16ace7108097af537c70c7f705c3a7 #从Authing.cn控制台获取OIDC应用的App Secret并存入在Lambda环境变量中
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
